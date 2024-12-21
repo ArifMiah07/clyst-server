@@ -11,7 +11,7 @@ const postSchema = new Schema<TPost, PostModel>(
     text: { type: String, required: true },
     imgUrl: { type: String, required: true },
     profileImage: { type: String, required: true },
-    isDeleted: { type: Boolean, required: true, default: false },
+    isDeleted: { type: Boolean, default: false },
   },
   {
     timestamps: true, // Adds createdAt and updatedAt fields

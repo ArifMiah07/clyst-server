@@ -8,6 +8,7 @@ import postValidationSchema from './post.validation';
 const createAPost = async (req: Request, res: Response) => {
   try {
     const { post: postData } = req.body;
+    console.log('hiiiiiiiiiiiii', req.body);
     const zodParsedData = postValidationSchema.parse(postData);
     const result = await postService.createAPostIntoDb(zodParsedData);
 

@@ -8,7 +8,20 @@ const app: Application = express();
 
 //middleware
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'https://iclyst.web.app',
+      'https://iclyst.firebaseapp.com',
+      'https://clyst.netlify.app',
+      'http://localhost:5173',
+      'http://localhost:5174',
+    ], // Allow specific frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
+  }),
+);
 
 //application routes
 app.use('/api/v1/data', postRoutes);

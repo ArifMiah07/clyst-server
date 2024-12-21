@@ -9,7 +9,7 @@ export type TPost = {
   text: string;
   imgUrl: string;
   profileImage: string;
-  isDeleted: boolean;
+  isDeleted?: boolean;
 };
 
 export type PostModel = Model<TPost>;
