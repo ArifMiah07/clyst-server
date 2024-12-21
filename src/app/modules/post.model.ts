@@ -1,7 +1,5 @@
-
-import { model, Schema } from "mongoose";
-import { PostModel, TPost } from "./post/post.interface";
-
+import { model, Schema } from 'mongoose';
+import { PostModel, TPost } from './post/post.interface';
 
 const postSchema = new Schema<TPost, PostModel>(
   {
@@ -13,12 +11,12 @@ const postSchema = new Schema<TPost, PostModel>(
     text: { type: String, required: true },
     imgUrl: { type: String, required: true },
     profileImage: { type: String, required: true },
-    isDeleted: { type: Boolean, required: true, default: false}
+    isDeleted: { type: Boolean, required: true, default: false },
   },
   {
     timestamps: true, // Adds createdAt and updatedAt fields
-  }
+  },
 );
 
 // Create the model based on the schema
-export const Post = model<TPost, PostModel>("Post", postSchema);
+export const Post = model<TPost, PostModel>('Post', postSchema);
